@@ -32,3 +32,45 @@ Denna webbapplikation är en enkel bloggplattform där användare kan läsa inl�
    ```bash
    git clone https://github.com/<ditt-användarnamn>/my-webapp.git
    cd my-webapp
+
+
+## Del 2: Teori
+
+### Pris och prestanda mellan containrar och VM
+
+#### Containrar
+- **Plattform**: Docker Containers.
+- **Beräknad kostnad**: 272-327kr per månad för en värdmaskin (t.ex., Azure B1ms).
+- **Fördelar**:
+  - Lägre kostnad eftersom flera containrar kan köras på samma värd.
+  - Snabbare starttid och enklare att hantera beroenden.
+  - Resurseffektiv.
+
+#### Virtuella Maskiner (VM)
+- **Plattform**: Azure VMs (B1ms).
+- **Beräknad kostnad**: 545-654kr per månad för två separata maskiner.
+- **Fördelar**:
+  - Bättre isolering mellan tjänster.
+  - Större flexibilitet för resursallokering.
+
+#### Slutsats
+Containrar är kostnadseffektiva och tillräckliga för de flesta små och medelstora applikationer.
+
+---
+
+### Lagringskostnad
+
+#### Antaganden
+- Databasen är **25 GB**.
+- Aktiv (het lagring) i **2 veckor**.
+- Arkiveras i **6 månader**.
+
+#### Beräkningar
+
+| Leverantör | Het lagring (2 veckor) | Arkivering (6 månader) | Totalkostnad |
+|------------|-------------------------|-------------------------|--------------|
+| **Azure**  | 20.45kr                 | 16.36kr                   | **36.80kr**   |
+| **AWS**    | 27.26kr                   | 16.36kr                   | **43.62kr**     |
+
+#### Slutsats
+Azure erbjuder något lägre lagringskostnad, men skillnaden är liten för små datamängder.
